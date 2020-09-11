@@ -1,0 +1,5 @@
+
+type Techinical {
+    id: Int!,
+    name: String!
+}

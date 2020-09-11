@@ -1,0 +1,7 @@
+
+
+type solicitationType {
+    id: Int,
+    name: String,
+    score: Float
+}

@@ -1,0 +1,11 @@
+type Mutation {
+ 
+    registerSolicitation(
+        data: SolicitationInput!
+    ): [Solicitations]
+
+    alterSolicitation(
+        filter: SolicitationFilter,
+        data: SolicitationInput
+    )
+}

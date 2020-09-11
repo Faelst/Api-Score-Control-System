@@ -1,0 +1,4 @@
+type Query {
+    solicitations: [Solicitations]
+    solicitationsByUser: (filter: SolicitationFilter!): [Solicitations]
+}
