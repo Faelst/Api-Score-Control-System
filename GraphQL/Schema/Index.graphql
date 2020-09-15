@@ -1,7 +1,0 @@
-  
-#import Solicitations from 'Solicitation.graphql'
-#import solicitationType from 'SolicitationTypes.graphql'
-#import LevelSolicitation from 'LevelSolicitation.graphql'
-#import Techinical from 'Techinical.graphql'
-#import Query from 'Query.graphql'
-#import Mutation from 'Mutation.graphql'

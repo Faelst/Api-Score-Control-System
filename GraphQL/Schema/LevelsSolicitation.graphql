@@ -1,6 +1,0 @@
-
-type LevelSolicitation {
-    id: int,
-    name: String,
-    score: Float
-}
