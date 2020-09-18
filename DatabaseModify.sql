@@ -75,9 +75,8 @@ CREATE TABLE dubbed_services (
     create_date timestamp not null DEFAULT current_timestamp,
     PRIMARY KEY (id),
     FOREIGN KEY (service_id) REFERENCES services(id),
-    FOREIGN KEY (technical_id) REFERENCES usuario(id_usuario)   
+    FOREIGN KEY (technical_id) REFERENCES technicals(id)   
 );
-
 ----------------------------------- Insert dos tecnicos 
 INSERT INTO technicals(id, name, street, neighborhood, city, status, email, phone, phone2, erp_people_id) VALUES (49,"Bruno Weber dos Santos","Rua Cruzeiro","Cidade Nova","Pindamonhangaba",1,"joaorodriguesvivas@gmail.com","","",49);
 INSERT INTO technicals(id, name, street, neighborhood, city, status, email, phone, phone2, erp_people_id) VALUES (61,"Ricardo Vitalino","Rua Noruega","Residencial Pasin","Pindamonhangaba",1,"matheus.marinho@vivastelecom.com.br","","",61);

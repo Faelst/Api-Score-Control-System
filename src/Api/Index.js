@@ -15,23 +15,22 @@ module.exports.registerSolicitation = async (req, res) => {
 
     try {
         const assignmentTypeId = await db('assignment_types').select('id').where({ title: assignmentType }).first()
-        // const [id] = await db('services')
-        //     .insert({
-        //         "service_number": serviceNumber,
-        //         "technical_id": technicialId,
-        //         "user_id": userId,
-        //         "city_id": serviceCity,
-        //         "assignment_type_id": assignmentTypeId.id,
-        //         "assignment_level_id": levelsAssigment,
-        //         "issue_date": moment().format(),
-        //         "execute_date": moment(issueDate, "DD/MM/YYYY").format("YYYY-MM-DD"),
-        //         "descriotion_service": descriotionService,
-        //         "dubbed_service": dubbedService
-        //     })
         
-        const id = 13
+        const [id] = await db('services')
+             .insert({
+                 "service_number": serviceNumber,
+                "technical_id": technicialId,
+                "user_id": userId,
+                "city_id": serviceCity,
+                "assignment_type_id": assignmentTypeId.id,
+                "assignment_level_id": levelsAssigment,
+                "issue_date": moment().format(),
+                "execute_date": moment(issueDate, "DD/MM/YYYY").format("YYYY-MM-DD"),
+                "descriotion_service": descriotionService,
+                "dubbed_service": dubbedService
+            })
+        
         if (dubbedService && req.body.addTechinical) {
-            console.log(req.body.addTechinical)
             let {addTechinical} = req.body
             addTechinical.map(async element => {
                 await db(`dubbed_services`)
