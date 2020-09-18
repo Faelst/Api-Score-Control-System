@@ -11,7 +11,7 @@ create table technicals (
     phone2 varchar(255) DEFAULT NULL,
     erp_people_id int(10) DEFAULT null,
     deleted int(10) default 0,
-    create_date date DEFAULT CURRENT_DATE,
+    create_date timestamp DEFAULT CURRENT_DATE,
     PRIMARY KEY (id)
 );
 
@@ -21,7 +21,7 @@ create table assignment_levels (
     score float(10) not null,
     active int(5) default 1,
 	deleted int(5) NOT null DEFAULT 0,
-    create_date date DEFAULT CURRENT_DATE,
+    create_date timestamp DEFAULT CURRENT_DATE,
     PRIMARY KEY (id)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE assignment_types (
     assignment_level_id int(10) not null,
     active int(5) default 1,
 	deleted int(5) NOT null DEFAULT 0,
-    create_date date DEFAULT CURRENT_DATE,
+    create_date timestamp DEFAULT CURRENT_DATE,
     PRIMARY KEY (id),
 );
 
@@ -50,28 +50,30 @@ CREATE TABLE services (
     city_id int(10) not null,
 	assignment_type_id int(10) not null,
     assignment_level_id int(10) not null,
-    issue_date date default null,
+    issue_date timestamp default null default current_timestamp,
 	execute_date date not null,
     descriotion_service varchar(255) DEFAULT NULL,
 	dubbed_service int(2) default 0,
 	deleted int(5) NOT null DEFAULT 0,
-    create_date date not null DEFAULT CURRENT_DATE,
+    create_date timestamp not null DEFAULT current_timestamp,
 	erp_service_id int(10) not null,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES usuario(id_usuario),
 	FOREIGN KEY (technical_id) REFERENCES technicals(id),
     FOREIGN KEY (assignment_type_id) REFERENCES assignment_types(id),
-    FOREIGN KEY (assignment_level_id) REFERENCES assignment_levels(id)
+    FOREIGN KEY (assignment_level_id) REFERENCES assignment_levels(id),
     FOREIGN KEY (city_id) REFERENCES cidade(id_cidade)
 );
 
 CREATE TABLE dubbed_services (
+	id int(10) not null auto_increment,
     service_id int(5) not null,
     technical_id int(5) not null,
     follow_type_code int(5) not null,
     follow_type_desc varchar(255) DEFAULT NULL,
     deleted int(5) NOT null DEFAULT 0,
-    create_date date not null DEFAULT CURRENT_DATE,
+    create_date timestamp not null DEFAULT current_timestamp,
+    PRIMARY KEY (id),
     FOREIGN KEY (service_id) REFERENCES services(id),
     FOREIGN KEY (technical_id) REFERENCES usuario(id_usuario)   
 );

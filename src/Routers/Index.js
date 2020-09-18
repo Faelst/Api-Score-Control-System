@@ -10,12 +10,24 @@ router.get('/assignmentTypes', Api.getAssignmentTypes)
 //---------------------- Assigment_types -------------------------//
 
 
+//---------------------- cities -------------------------//
+router.get('/cities', Api.getCities);
+//---------------------- cities -------------------------//
+
+
+//---------------------- Assigment_types -------------------------//
+router.post('/technicals', Api.getTechnicals)
+//---------------------- Assigment_types -------------------------//
+
+
 //---------------------- Assigment_levels -------------------------//
 router.get('/assignmentLevels/:id', Api.getAssignmentLevels)
 //---------------------- Assigment_levels -------------------------//
 
 
-router.post('/registerSolicitation', registerSolicitationValidator, Api.registerSolicitation);
+//---------------------- register form -------------------------//
+router.post('/registerSolicitation', Api.registerSolicitation);
+//---------------------- register form -------------------------//
 
 
 
