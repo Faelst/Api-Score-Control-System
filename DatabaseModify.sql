@@ -36,7 +36,7 @@ CREATE TABLE assignment_types (
 );
 
 CREATE TABLE assignment_type_levels (
-	assignment_type_id int(10) not null,
+	assignment_type_id int(10) not null,""
     assignment_level_id int ('10') not null,
 	FOREIGN KEY (assignment_type_id) REFERENCES assignment_types(id),
 	FOREIGN KEY (assignment_level_id) REFERENCES assignment_levels(id)

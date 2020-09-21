@@ -5,7 +5,7 @@
   "main": "loader.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./src/App.js"
+    "start": "set PORT=8081 && nodemon ./src/App.js"
   },
   "repository": {
     "type": "git",

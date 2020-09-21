@@ -81,7 +81,7 @@ module.exports.getTechnicals = async (req, res) => {
 // ------------------------------- Cities -------------------------------------------------//
 module.exports.getCities = async (req, res) => {
     try {
-        const cities = await db('cidade')
+        const cities = await db('cities')
             .select('id_cidade', 'nome_cidade');
         return res.status(200).send({
             status: true,
