@@ -29,6 +29,11 @@ router.get('/assignmentLevels/:id', Api.getAssignmentLevels)
 router.post('/registerSolicitation', Api.registerSolicitation);
 //---------------------- register form -------------------------//
 
+//---------------------- service list -------------------------//
+router.get('/services', Api.getServices);
+router.get('/service/:id', Api.getServiceById);
+//---------------------- service list -------------------------//
+
 
 
 module.exports = router;

@@ -1,3 +1,11 @@
+CREATE TABLE cities  (
+    id INT(10) unsigned NOT NULL auto_increment,
+    name varchar(255) NOT null ,
+    deleted int(5) NOT null DEFAULT 0,
+    deleted_at timestamp,
+    create_date timestamp not null DEFAULT current_timestamp,
+    primary key (id)
+)
 
 create table technicals (
     id int(10) not null,
